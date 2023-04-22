@@ -6,15 +6,33 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 50,
-    "modules-left": ["clock","custom/weather","wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "bluetooth", "temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/myhyprv","custom/light_dark"],
-    "include": ["~/.config/HyprV/waybar/conf/asus-rog.jsonc", "~/.config/HyprV/waybar/conf/hyprv-util.jsonc"],
-    
+    "modules-left": [
+        "clock",
+        "custom/weather",
+        "wlr/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "temperature",
+        "custom/power_profile",
+        "battery",
+        "backlight",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "tray",
+        "custom/myhyprv",
+        "custom/light_dark"
+    ],
+    "include": [
+        "~/.config/HyprV/waybar/conf/hyprv-util.jsonc"
+    ],
     "hyprland/window": {
         "format": "{}"
     },
-
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -32,35 +50,34 @@
             "10": []
         }
     },
-
-   "custom/weather" : {
+    "custom/weather": {
         //shows the current weather and forecast
-        "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/HyprV/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/HyprV/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
     },
-
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
-
     "clock": {
         "format": "{: %I:%M %p   %a, %b %e}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "on-scroll-up": "~/.config/HyprV/waybar/scripts/brightness --inc",
         "on-scroll-down": "~/.config/HyprV/waybar/scripts/brightness --dec",
         "min-length": 6
     },
-
     "battery": {
         "states": {
             "good": 95,
@@ -71,9 +88,20 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
@@ -90,10 +118,13 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
-
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -104,7 +135,6 @@
         "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --mic-dec",
         "scroll-step": 5
     },
-    
     "temperature": {
         "thermal-zone": 1,
         "format": "{temperatureF}°F ",
@@ -112,7 +142,6 @@
         "format-critical": "{temperatureC}°C ",
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
-
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "  {signalStrength}%",
@@ -122,13 +151,12 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
     },
-
     "bluetooth": {
-	    "format": " {status}",
-	    "format-disabled": "", // an empty format will hide the module
-	    "format-connected": " {num_connections}",
-	    "tooltip-format": "{device_alias}",
-	    "tooltip-format-connected": " {device_enumerate}",
-	    "tooltip-format-enumerate-connected": "{device_alias}"
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": " {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
     }
 }

@@ -242,11 +242,11 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     ln -sf ~/.config/HyprV/kitty/kitty.conf ~/.config/kitty/kitty.conf
     ln -sf ~/.config/HyprV/mako/conf/config-dark ~/.config/mako/config
     ln -sf ~/.config/HyprV/swaylock/config ~/.config/swaylock/config
-    ln -sf ~/.config/HyprV/waybar/conf/v3-config.jsonc ~/.config/waybar/config.jsonc
-    ln -sf ~/.config/HyprV/waybar/style/v3-style-dark.css ~/.config/waybar/style.css
+    ln -sf ~/.config/HyprV/waybar/conf/v2-config.jsonc ~/.config/waybar/config.jsonc
+    ln -sf ~/.config/HyprV/waybar/style/v2-style-dark.css ~/.config/waybar/style.css
     ln -sf ~/.config/HyprV/wlogout/layout ~/.config/wlogout/layout
     ln -sf ~/.config/HyprV/wofi/config ~/.config/wofi/config
-    ln -sf ~/.config/HyprV/wofi/style/v3-style-dark.css ~/.config/wofi/style.css
+    ln -sf ~/.config/HyprV/wofi/style/v2-style-dark.css ~/.config/wofi/style.css
 
     # Copy the SDDM theme
     echo -e "$CNT - Setting up the login screen."
@@ -280,7 +280,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita-dark"
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Adwaita-dark"
-    cp -f ~/.config/HyprV/backgrounds/v3-background-dark.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+    cp -f ~/.config/HyprV/backgrounds/v2-background-dark.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 fi
 
 ### Install the starship shell ###
