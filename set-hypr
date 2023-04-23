@@ -106,19 +106,6 @@ else
     ISNVIDIA=false
 fi
 
-### Disable wifi powersave mode ###
-read -rep $'[\e[1;33mACTION\e[0m] - Would you like to disable WiFi powersave? (y,n) ' WIFI
-if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
-    LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
-    echo -e "$CNT - The following file has been created $LOC."
-    echo -e "[connection]\nwifi.powersave = 2" | sudo tee -a $LOC &>> $INSTLOG
-    echo -e "\n"
-    echo -e "$CNT - Restarting NetworkManager service..."
-    sleep 1
-    sudo systemctl restart NetworkManager &>> $INSTLOG
-    sleep 3
-fi
-
 #### Check for package manager ####
 ISYAY=/sbin/yay
 if [ -f "$ISYAY" ]; then 
@@ -280,7 +267,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita-dark"
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Adwaita-dark"
-    cp -f ~/.config/HyprV/backgrounds/v2-background-dark.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+    cp -f ~/.config/HyprV/backgrounds/v2-background-dark.png /usr/share/sddm/themes/sdt/wallpaper.png
 fi
 
 ### Install the starship shell ###
