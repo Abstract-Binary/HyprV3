@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# HyprV3 By SolDoesTech - https://www.youtube.com/@SolDoesTech
-# License..? - You may copy, edit and ditribute this script any way you like, enjoy! :)
+# License - MIT
 
 # The follwoing will attempt to install all needed packages to run Hyprland
 # This is a quick and dirty script there are some error checking
@@ -52,6 +51,7 @@
 # xfce4-settings: Xfce's Configuration System
 # sddm-git [AUR]: The Simple Desktop Display Manager
 # sddm-sugar-candy-git [AUR]: Sugar Candy is the sweetest login theme available for the SDDM display manager.
+# hyprpaper [AUR]: A wallpaper manager for Hyprland
 
 # set some colors
 CNT="[\e[1;36mNOTE\e[0m]"
@@ -115,7 +115,7 @@ else
     read -rep $'[\e[1;33mACTION\e[0m] - Would you like to install paru (y,n) ' INSTYAY
     if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
         git clone https://aur.archlinux.org/paru-git.git &>> $INSTLOG
-        cd paru-git
+        cd paru-bin
         makepkg -si --noconfirm &>> ../$INSTLOG
         cd ..
     else
